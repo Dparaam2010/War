@@ -17,9 +17,11 @@ const CARDS = [
     'A♦','2♦','3♦','4♦','5♦','6♦','7♦','8♦','9♦','10♦','J♦','K♦','Q♦',
     'A♥️','2♥️','3♥️','4♥️','5♥️','6♥️','7♥️','8♥️','9♥️','10♥️','J♥️','K♥️','Q♥️',
     'A♠','2♠','3♠','4♠','5♠','6♠','7♠','8♠','9♠','10♠','J♠','K♠','Q♠',
+]
 
 
 // /*----- state variables -----*/
+// two variables to represent player A and B
 let playerADeck = []
 let playerBDeck = []
 
@@ -35,11 +37,12 @@ let playerBDeck = []
 
 
 // /*----- functions -----*/
+// split the deck into two decks for Player A and B
 initialize();
 
 function initialize() {
   const shuffleDeck = shuffle(CARDS)
-  playerADeck = shuffledDeck.slice(0, 26)
+  playerADeck = shuffleDeck.slice(0, 26)
   playerBDeck = shuffleDeck.slice(26)
 
 }
