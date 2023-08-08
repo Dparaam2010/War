@@ -1,34 +1,112 @@
-/* * {
-    box-sizing:border-box;
-    margin: 0;
-    padding: 0;
-    font-size: 16px;
-}
-
-h1 {
-    font-size: 2rem;
+* {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    box-sizing: border-box;
 }
 
 body {
     height: 100vh;
-    display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    background-image: url(https://t4.ftcdn.net/jpg/04/99/31/89/360_F_499318908_nDpRPKNMwn0U9Q7fBbqzsd9ksaQwAriK.jpg);
+    background-size: contain;
 }
 
-#board {
-    height: 70%;
-    width: 70%;
-    margin-top: 3rem;
+main{
+    display: grid;
+    grid-template-columns: 35vmin 15vmin 35vmin;
+    grid-template-rows: 10vmin 10vmin 35vmin 15vmin;
+}
+
+main * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     
 }
 
-#board > div {
-    margin-right: 3%;
-    border: 1px solid black;
-    display: inline-block;
-    width: 40%;
-    height: 40%
 
-} */
+.flex-ctr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+button {
+    justify-self: center;
+    width: 16vmin;
+    margin: 1vmin;
+    background-color: pink;
+    color: black;
+    border:3vmin soild black;
+    border-radius: 4vmin;
+    font-size: 4vmin;
+    
+}
+
+.cards {
+    border: 2px solid black;
+    background-image: url(https://previews.123rf.com/images/ngad/ngad1510/ngad151000105/46949875-pink-of-playing-card.jpg);
+    background-size: 97%;
+    background-repeat: no-repeat;
+    max-width: 200px;
+    margin: -1vmin;
+    margin-top: -2vmin;
+    margin-bottom: -6vmin;
+    
+}
+
+.pbcards {
+    border: 2px solid black;
+    background-image: url(https://previews.123rf.com/images/ngad/ngad1510/ngad151000105/46949875-pink-of-playing-card.jpg);
+    background-size: 97%;
+    background-repeat: no-repeat;
+    max-width: 200px;
+    margin: -1vmin;
+    margin-top: -2vmin;
+    margin-bottom: -6vmin;
+}
+
+.carda-flipped {
+    border: 2px solid black;
+    background-image: url(https://previews.123rf.com/images/ngad/ngad1510/ngad151000105/46949875-pink-of-playing-card.jpg);
+    background-size:97%;
+    background-repeat: no-repeat;
+    max-width: 200px;
+    margin: -1vmin;
+    margin-top: 8vmin;
+    margin-bottom: 6vmin;
+}
+
+.cardb-flipped {
+    border: 2px solid black;
+    background-image: url(https://previews.123rf.com/images/ngad/ngad1510/ngad151000105/46949875-pink-of-playing-card.jpg);
+    background-size:97%;
+    background-repeat: no-repeat;
+    max-width: 200px;
+    margin: -1vmin;
+    margin-top: 8vmin;
+    margin-bottom: 6vmin;
+}
+
+
+button:hover {
+    background-color: palevioletred;
+    background: palevioletred;
+    color: white;
+   
+
+}
+
+h1 {
+    color: white;
+    font-style: oblique;
+
+}
+
+h2 {
+    background-color: white;
+
+}
+
