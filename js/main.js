@@ -9,6 +9,14 @@
 // 8. Which ever player has the higher value wins!
 // 9. 
 /*----- constants -----*/
+//define the Deck class..
+class Deck {
+  constructor(CARDS) {
+    this.CARDS = CARDS;
+  }
+}
+
+
 // i used the variable const to creat a array for all my suits and values.
 // to created a deck with 52 cards
 
@@ -17,13 +25,20 @@ const CARDS = [
     'A♦','2♦','3♦','4♦','5♦','6♦','7♦','8♦','9♦','10♦','J♦','K♦','Q♦',
     'A♥️','2♥️','3♥️','4♥️','5♥️','6♥️','7♥️','8♥️','9♥️','10♥️','J♥️','K♥️','Q♥️',
     'A♠','2♠','3♠','4♠','5♠','6♠','7♠','8♠','9♠','10♠','J♠','K♠','Q♠',
-]
+  ]
+
 
 
 // /*----- state variables -----*/
+
+
+
 // two variables to represent player A and B
-let playerADeck = []
-let playerBDeck = []
+let board, playersTurns, winner, plaAscore, plbscore;
+let playerADeck;
+let playerBDeck;
+
+
 
 
 
@@ -36,16 +51,43 @@ let playerBDeck = []
 // /*----- event listeners -----*/
 
 
+
 // /*----- functions -----*/
-// split the deck into two decks for Player A and B
+
+
+
+
 initialize();
 
+function getPlaceValue(place) {
+const CARDS = {
+  '2': 2,
+  '3': 3,
+  '4': 4,
+  '5': 5,
+  '6': 6,
+  '7': 7,
+  '8': 8,
+  '9': 9,
+  '10': 10,
+  'J': 11,
+  'Q': 12,
+  'K': 13,
+  'A': 14,
+};
+return CARDS[place];
+}
+
+
+// split the deck into two decks for Player A and B
 function initialize() {
   const shuffleDeck = shuffle(CARDS)
   playerADeck = shuffleDeck.slice(0, 26)
   playerBDeck = shuffleDeck.slice(26)
 
 }
+
+
 
 // this function will shuffle the deck
 
