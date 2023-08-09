@@ -27,16 +27,17 @@ const CARDS = [
     'A♠','2♠','3♠','4♠','5♠','6♠','7♠','8♠','9♠','10♠','J♠','K♠','Q♠',
   ]
 
+  // made each card a value
+    const CARDVALUES = [{'2':2}, {'3':3}, {'4':4}, {'5':5}, {'6':6},{'7':7},{'8':8},{'9':9},{'10':10},{'J':11},{'Q':12},{'K':13},{'A':14}]
+    
+    
 
 
 // /*----- state variables -----*/
 
+//defined my variables
+let winner, plAScore, plBScore; playerADeck, playerBDeck;
 
-
-// two variables to represent player A and B
-let board, playersTurns, winner, plaAscore, plbscore;
-let playerADeck;
-let playerBDeck;
 
 
 
@@ -45,7 +46,10 @@ let playerBDeck;
 
 
 // /*----- cached elements  -----*/
-
+const plACards = document.querySelector(".pacards");
+const plBCards = document.querySelector(".pbcards");
+const plAScores = document.querySelector(".pla-score");
+const plBScores = document.querySelector(".plab-score");
 
 
 // /*----- event listeners -----*/
@@ -59,24 +63,13 @@ let playerBDeck;
 
 initialize();
 
-function getPlaceValue(place) {
-const CARDS = {
-  '2': 2,
-  '3': 3,
-  '4': 4,
-  '5': 5,
-  '6': 6,
-  '7': 7,
-  '8': 8,
-  '9': 9,
-  '10': 10,
-  'J': 11,
-  'Q': 12,
-  'K': 13,
-  'A': 14,
-};
-return CARDS[place];
+function playGame() {
+
 }
+
+
+
+
 
 
 // split the deck into two decks for Player A and B
