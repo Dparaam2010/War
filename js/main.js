@@ -51,9 +51,14 @@ const plBCards = document.querySelector(".pbcards");
 const plAScores = document.querySelector(".pla-score");
 const plBScores = document.querySelector(".plab-score");
 
+const dealButton = document.getElementById("dealButton");
+const playAgnButton = document.getElementById("playAgnButton");
+
 
 // /*----- event listeners -----*/
 
+dealButton.addEventListener("click", handleDeal);
+playAgnButton.addEventListener("click", init);
 
 
 // /*----- functions -----*/
