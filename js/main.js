@@ -73,6 +73,26 @@ function init() {
 
 }
 
+function render() {
+  renderBoard()
+  renderScore()
+  renderControls()
+}
+
+function renderBoard() {
+
+}
+
+function renderScore() {
+  plAScores.innerText = plAScore
+  plBScores.innerText = plBScore
+
+
+}
+
+function renderControls() {
+
+}
 
 
 
