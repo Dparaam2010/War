@@ -29,14 +29,20 @@ const CARDS = [
 
   // made each card a value
     const CARDVALUES = [{'2':2}, {'3':3}, {'4':4}, {'5':5}, {'6':6},{'7':7},{'8':8},{'9':9},{'10':10},{'J':11},{'Q':12},{'K':13},{'A':14}]
-    
+   
+    const CARDIMAGES = {
+       'A♣' : 'images/clubs/clubs-A.svg',//'2♣','3♣','4♣','5♣','6♣','7♣','8♣','9♣','10♣','J♣','K♣','Q♣',
+      // 'A♦','2♦','3♦','4♦','5♦','6♦','7♦','8♦','9♦','10♦','J♦','K♦','Q♦',
+      // 'A♥️','2♥️','3♥️','4♥️','5♥️','6♥️','7♥️','8♥️','9♥️','10♥️','J♥️','K♥️','Q♥️',
+      // 'A♠','2♠','3♠','4♠','5♠','6♠','7♠','8♠','9♠','10♠','J♠','K♠','Q♠',
+    }
     
 
 
 // /*----- state variables -----*/
 
 //defined my variables
-let winner, plAScore, plBScore; playerADeck, playerBDeck;
+let winner, plAScore, plBScore, playerADeck, playerBDeck, turnNum
 
 
 // /*----- cached elements  -----*/
@@ -44,6 +50,8 @@ const plACards = document.querySelector(".pacards");
 const plBCards = document.querySelector(".pbcards");
 const plAScores = document.querySelector(".pla-score");
 const plBScores = document.querySelector(".plab-score");
+
+const messageEl = document.querySelector("h2")
 
 const dealButton = document.getElementById("dealButton");
 const playAgnButton = document.getElementById("playAgnButton");
@@ -70,32 +78,69 @@ function init() {
   winner = null;
   plAScore = 0;
   plBScore = 0;
-
+  messageEl.innerText = "PLAYER A VS PLAYER B"
 }
 
 function render() {
-  renderBoard()
+  // renderBoard()
   renderScore()
   renderControls()
 }
 
-function renderBoard() {
+// function renderBoard() {
 
-}
+// }
 
 function renderScore() {
   plAScores.innerText = plAScore
   plBScores.innerText = plBScore
-
-
 }
 
 function renderControls() {
-
+  playAgnButton.style.visibility = winner ? "visable" : "hidden"
 }
 
+function handleDeal() {
+  if (turnNum === 26) getWinner()
+  plACards.style.backgroundImage = CARDIMAGES[playerADeck[turnNum]]
+  plBCards.style.backgroundImage = CARDIMAGES[playerBDeck[turnNum]]
+  let playerACardVal = CARDVALUES[playerADeck[turnNum]]
+  let playerBCardVal = CARDVALUES[playerBDeck[turnNum]]
+  compareCards(playerACardVal, playerBCardVal)
+  render()
+  }
+
+  function compareCards(playerACardVal,playerBCardVal) {
+    if (playerACardVal === playerBCardVal) {
+      messageEl.innerText = "IT'S WAR"
+      turnNum++}
+    else if(playerACardVal < playerBCardVal) {
+      messageEl.innerText = ""
+      plBScore++
+      turnNum++}
+      else if(playerACardVal > playerBCardVal) {
+        messageEl.innerText = ""
+        plAScore++
+        turnNum++}
+  }
 
 
+  
+  
+
+
+
+function getWinner() {
+  if (plAScore === plBScore){
+    messageEl.innerText = "NO WINNER-I'TS A TIE"
+  }
+  else if(plAScore > plBScore) {
+    messageEl.innerText = "PLAYER A WINS"
+  }
+  else if(plAScore < plBScore) {
+    messageEl.innerText = "PLAYER B WINS"
+  }
+}
 
 
 
