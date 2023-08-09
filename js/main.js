@@ -39,12 +39,6 @@ const CARDS = [
 let winner, plAScore, plBScore; playerADeck, playerBDeck;
 
 
-
-
-
-
-
-
 // /*----- cached elements  -----*/
 const plACards = document.querySelector(".pacards");
 const plBCards = document.querySelector(".pbcards");
@@ -66,24 +60,27 @@ playAgnButton.addEventListener("click", init);
 
 
 
-initialize();
+init();
 
-function playGame() {
-
-}
-
-
-
-
-
-
-// split the deck into two decks for Player A and B
-function initialize() {
+function init() {
+  // split the deck into two decks for Player A and B
   const shuffleDeck = shuffle(CARDS)
   playerADeck = shuffleDeck.slice(0, 26)
   playerBDeck = shuffleDeck.slice(26)
+  winner = null;
+  plAScore = 0;
+  plBScore = 0;
 
 }
+
+
+
+
+
+
+
+
+
 
 
 
