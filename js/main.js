@@ -8,15 +8,12 @@ const RANK = [
   'A','02','03','04','05','06','07','08','09','10','J','K','Q',
 ]
 
-const SUITS = ['d','h','c','s']
-
-const FACEVALUES = {'A' : 1,'J' : 11,'Q' : 12,'K' : 13,}
-
+const SUITS = ['diamonds','hearts','clubs','spades']
 
 // /*----- state variables -----*/
 
 //defined my variables
-let winner, plAScore, plBScore, playerADeck, playerBDeck, turnNum, playerACardVal, playerBCardVal
+let winner, plAScore, plBScore, playerADeck, playerBDeck, turnNum, pACard, pBCard
 
 const DECK = []
 
@@ -40,9 +37,6 @@ playAgnButton.addEventListener("click", init);
 
 // /*----- functions -----*/
 
-
-
-
 init();
 
 
@@ -57,45 +51,50 @@ function init() {
   playerADeck = shuffleDeck.slice(0, 26)
   playerBDeck = shuffleDeck.slice(26)
   winner = null;
+  turnNum = 0;
   plAScore = 0;
   plBScore = 0;
   messageEl.innerText = "PLAYER A VS PLAYER B "
 }
   
   function render() {
-    // renderBoard()
+    renderBoard()
     renderScore()
-    renderControls()
+  }
+
+  function renderBoard() {
+  
+    cardc06.style.backgroundImage = `url(css/card-library/images/${pACard.suit}/${pACard.suit}-${pACard.rank}.svg)`
+    cardd09.style.backgroundImage = `url(css/card-library/images/${pBCard.suit}/${pBCard.suit}-${pBCard.rank}.svg)`
   }
   
   function renderScore() {
     plAScores.innerText = plAScore
     plBScores.innerText = plBScore
   }
-  //Ternary Operator
-  function renderControls() {
-    playAgnButton.style.visibility = winner ? "visable" : "hidden"
-  }
+  
   //if we get to 26 that = getWinner
   function handleDeal() {
-    if (turnNum === 26) getWinner()
-    let cardc06 = playerADeck[turnNum]
-    let cardd09 = playerBDeck[turnNum]
-  compareCards(cardc06.value, cardd09.value)
+    if (turnNum === 26) {
+      getWinner()
+    }
+     pACard = playerADeck[turnNum]
+     pBCard = playerBDeck[turnNum]
+  compareCards(pACard.value, pBCard.value)
   render()
 }
 //DECK[0].face
 //if playerA is === to player B that its war, other wise if player A is less than player B then increase playerB by one, otherwise if 
 //player A is greater than player B than player A incease by 1
-function compareCards(cardc06Val,cardc09Val) {
-  if (cardc06Val === cardc09Val) {
+function compareCards(pACard,pBCard) {
+  if (pACard === pBCard) {
     messageEl.innerText = "IT'S WAR"
     turnNum++}
-    else if(cardc06Val < cardc09Val) {
+    else if(pACard < pBCard) {
       messageEl.innerText = ""
       plBScore++
       turnNum++}
-      else if(cardc06Val > cardc09Val) {
+      else if(pACard > pBCard) {
         messageEl.innerText = ""
         plAScore++
         turnNum++}
@@ -105,67 +104,46 @@ function compareCards(cardc06Val,cardc09Val) {
           RANK.forEach(r=>{
             if(r <= 10) {
               DECK.push({
-                face: `${s}${r}`,
+                suit: `${s}`,
+                rank: `r${r}`,
                 value: Number(r)}) }
-              else if(RANK === 'J') {
+              else if(r === 'J') {
                 DECK.push({
-                  face: `${s}${r}`,
+                  suit: `${s}`,
+                  rank: `${r}`,
                   value: 11})}
-                else if(RANK === 'Q'){
+                else if(r === 'Q'){
                DECK.push({
-                face: `${s}${r}`,
+                suit: `${s}`,
+                rank: `${r}`,
                 value: 12})}
-                else if (RANK === 'K'){
+                else if (r === 'K'){
                   DECK.push({
-                    face: `${s}${r}`,
+                    suit: `${s}`,
+                    rank: `${r}`,
                     value: 13})}
-                else if (RANK ==='A'){
+                else if (r ==='A'){
                     DECK.push({
-                      face: `${s}${r}`,
+                      suit: `${s}`,
+                      rank: `${r}`,
                       value: 14})}})
         })
       }
-
-      // A of diamonds
-      // {
-      //   face: 'dA'
-      //   value: 14
-      // }
-      // 2 of diamonds
-      // {
-      //   face: 'd02'
-      //   value: 2
-      // }
-      // 3 of diamonds
-      // {
-      //   face: 'd03'
-      //   value: 3
-      // }
-      // 4 of diamonds
-      //   {
-      //   face: 'd04'
-      //   value: 4
-      // }
-      // 5 of diamonds
-      // {
-      //   face: 'd05'
-      //   value: 5
-      // }
-
-   
-     
-      
+ 
 // if player A's score === player B's score there's no Winner, other wise if player A greater than player B than Player A win's
 // other wise if player A's score is less than player B's score than player B wins
 function getWinner() {
   if (plAScore === plBScore){
     messageEl.innerText = "NO WINNER-I'TS A TIE"
+    winner = "T"
   }
   else if(plAScore > plBScore) {
     messageEl.innerText = "PLAYER A WINS"
+    winner = "A"
   }
   else if(plAScore < plBScore) {
     messageEl.innerText = "PLAYER B WINS"
+    winner = "B"
   }
 }
 

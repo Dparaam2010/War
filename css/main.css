@@ -16,7 +16,7 @@ main{
     grid-template-rows: 5vmin 10vmin 33vmin 10vmin;
 }
 
-main * {
+main  {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,7 +30,25 @@ main * {
 }
 
 
+.cardc06,.cardd09 {
+    width: 15vmin;
+    height: 20vmin;
+    background-color: white;
+    background-position: center;
+    background-size:cover;
+}
 
+#pabox {
+    display:flex;
+    flex-direction: column;
+    margin-left: -125vmin;
+}
+
+#pbbox {
+    display:flex;
+    flex-direction: column;
+    margin-right: 34vmin;
+}
 
 button {
     justify-self: center;
