@@ -12,8 +12,8 @@ body {
 
 main{
     display: grid;
-    grid-template-columns: 35vmin 15vmin 35vmin;
-    grid-template-rows: 10vmin 10vmin 35vmin 15vmin;
+    grid-template-columns: 33vmin 10vmin 33vmin;
+    grid-template-rows: 5vmin 10vmin 33vmin 10vmin;
 }
 
 main * {
@@ -40,34 +40,12 @@ button {
     background-color: pink;
     color: black;
     border:3vmin soild black;
-    border-radius: 4vmin;
+    border-radius: 2vmin;
     font-size: 4vmin;
     
 }
 
-.pacards {
-    border: 2px solid black;
-    background-image: url(https://previews.123rf.com/images/ngad/ngad1510/ngad151000105/46949875-pink-of-playing-card.jpg);
-    background-size: 97%;
-    background-repeat: no-repeat;
-    max-width: 200px;
-    margin: -1vmin;
-    margin-top: -2vmin;
-    margin-bottom: -6vmin;
-    
-}
-
-.pbcards {
-    border: 2px solid black;
-    background-image: url(https://previews.123rf.com/images/ngad/ngad1510/ngad151000105/46949875-pink-of-playing-card.jpg);
-    background-size: 97%;
-    background-repeat: no-repeat;
-    max-width: 200px;
-    margin: -1vmin;
-    margin-top: -2vmin;
-    margin-bottom: -6vmin;
-}
-
+/* 
 .carda-flipped {
     border: 2px solid black;
     background-image: url(https://previews.123rf.com/images/ngad/ngad1510/ngad151000105/46949875-pink-of-playing-card.jpg);
@@ -88,7 +66,7 @@ button {
     margin: -1vmin;
     margin-top: 8vmin;
     margin-bottom: 6vmin;
-}
+} */
 
 
 button:hover {
@@ -106,7 +84,9 @@ h1 {
 }
 
 h2 {
-    background-color: white;
+    color: white;
 
 }
+
+
 

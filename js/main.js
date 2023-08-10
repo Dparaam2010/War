@@ -1,53 +1,26 @@
-// 1. War Game
-// 2. Create Deck of cards (must have a total of 52 cards)
-// 3. Each Card must have a 'club', 'diamonds', 'hearts', 'spades'
-// 4. List of Cards from 'A,2,3,4,5,6,7,8,9,10,J,K,Q'
-// .  creat each players cards
-// 5. Shuffle the Deck 
-// 6. Split Deck into Two Decks to represent player A, player B
-// 7. Each player flips a card to see whose card has the higher value
-// 8. Which ever player has the higher value wins!
-// 9. 
+ 
 /*----- constants -----*/
-//define the Deck class..
-class Deck {
-  constructor(CARDS) {
-    this.CARDS = CARDS;
-  }
-}
+console.log('test')
 
 
-// i used the variable const to creat a array for all my suits and values.
-// to created a deck with 52 cards
+// i used the variable const to creat a array for all my suits and faces.
+const FACES = [ 
+  'A','02','03','04','05','06','07','08','09','10','J','K','Q',
+]
 
-const CARDS = [ 
-    'A♣','2♣','3♣','4♣','5♣','6♣','7♣','8♣','9♣','10♣','J♣','K♣','Q♣',
-    'A♦','2♦','3♦','4♦','5♦','6♦','7♦','8♦','9♦','10♦','J♦','K♦','Q♦',
-    'A♥️','2♥️','3♥️','4♥️','5♥️','6♥️','7♥️','8♥️','9♥️','10♥️','J♥️','K♥️','Q♥️',
-    'A♠','2♠','3♠','4♠','5♠','6♠','7♠','8♠','9♠','10♠','J♠','K♠','Q♠',
-  ]
-
-  // made each card a value
-    const CARDVALUES = [{'2':2}, {'3':3}, {'4':4}, {'5':5}, {'6':6},{'7':7},{'8':8},{'9':9},{'10':10},{'J':11},{'Q':12},{'K':13},{'A':14}]
-   
-    const CARDIMAGES = {
-       'A♣' : 'images/clubs/clubs-A.svg','2♣' : 'images/clubs/clubs-r02.svg','3♣' : 'images/clubs/clubs-r03.svg' ,'4♣' : 'images/clubs/clubs-r04.svg','5♣' : 'images/clubs/clubs-r05.svg','6♣' : 'images/clubs/clubs-r06.svg','7♣' : 'images/clubs/clubs-r07.svg','8♣' : 'images/clubs/clubs-r08.svg','9♣' : 'images/clubs/clubs-r09.svg','10♣' : 'images/clubs/clubs-r10.svg','J♣' : 'images/clubs/clubs-J.svg','K♣' : 'images/clubs/clubs-K.svg','Q♣' : 'images/clubs/clubs-Q.svg',
-      'A♦' : 'images/diamonds/diamonds-A.svg','2♦' : 'images/diamonds/diamonds-r02.svg','3♦' : 'images/diamonds/diamonds-r03.svg','4♦' : 'images/diamonds/diamonds-r04.svg','5♦' : 'images/diamonds/diamonds-r05.svg','6♦' : 'images/diamonds/diamonds-r06.svg','7♦' : 'images/diamonds/diamonds-r07.svg','8♦' : 'images/diamonds/diamonds-r08.svg','9♦' : 'images/diamonds/diamonds-r09.svg','10♦' : 'images/diamonds/diamonds-r10.svg','J♦' : 'images/diamonds/diamonds-J.svg','K♦' : 'images/diamonds/diamonds-K.svg','Q♦' : 'images/diamonds/diamonds-Q.svg',
-      'A♥️' : 'images/hearts/hearts-A.svg','2♥️' : 'images/hearts/hearts-r02.svg','3♥️' : 'images/hearts/hearts-r03.svg','4♥️' : 'images/hearts/hearts-r04.svg','5♥️' : 'images/hearts/hearts-r05.svg','6♥️' : 'images/hearts/hearts-r06.svg','7♥️' : 'images/hearts/hearts-r07.svg','8♥️' : 'images/hearts/hearts-r08.svg','9♥️' : 'images/hearts/hearts-r09.svg','10♥️' : 'images/hearts/hearts-r10.svg','J♥️' : 'images/hearts/hearts-J.svg','K♥️' : 'images/hearts/hearts-K.svg','Q♥️' : 'images/hearts/hearts-Q.svg',
-      'A♠' : 'images/spades/spades-A.svg','2♠': 'images/spades/spades-r02.svg','3♠' : 'images/spades/spades-r03.svg','4♠' : 'images/spades/spades-r04.svg','5♠' : 'images/spades/spades-r05.svg','6♠' : 'images/spades/spades-r06.svg','7♠' : 'images/spades/spades-r07.svg','8♠' : 'images/spades/spades-r08.svg','9♠' : 'images/spades/spades-r09.svg','10♠' : 'images/spades/spades-r10.svg','J♠' : 'images/spades/spades-J.svg','K♠' : 'images/spades/spades-K.svg','Q♠' : 'images/spades/spades-Q.svg',
-    }
-    
+const SUITS = ['d','h','c','s']
 
 
 // /*----- state variables -----*/
 
 //defined my variables
-let winner, plAScore, plBScore, playerADeck, playerBDeck, turnNum
+let winner, plAScore, plBScore, playerADeck, playerBDeck, turnNum, playerACardVal, playerBCardVal
 
+const DECK = []
 
 // /*----- cached elements  -----*/
-const plACards = document.querySelector(".pacards");
-const plBCards = document.querySelector(".pbcards");
+const cardc06 = document.querySelector(".card c06");
+const cardd09 = document.querySelector(".card d09");
 const plAScores = document.querySelector(".pla-score");
 const plBScores = document.querySelector(".plab-score");
 
@@ -70,15 +43,28 @@ playAgnButton.addEventListener("click", init);
 
 init();
 
+function generateDeck() {
+  SUITS.forEach(s=>{
+    FACES.forEach(f=>{
+      DECK.push(
+        {face:s+f}
+      )
+    })
+  })
+}
+
 function init() {
   // split the deck into two decks for Player A and B
-  const shuffleDeck = shuffle(CARDS)
+  generateDeck()
+  console.log(DECK)
+  const shuffleDeck = shuffle(DECK)
   playerADeck = shuffleDeck.slice(0, 26)
   playerBDeck = shuffleDeck.slice(26)
   winner = null;
   plAScore = 0;
   plBScore = 0;
-  messageEl.innerText = "PLAYER A VS PLAYER B"
+  // messageEl.innerText = "PLAYER A VS PLAYER B "
+
 }
 
 function render() {
@@ -87,38 +73,35 @@ function render() {
   renderControls()
 }
 
-// function renderBoard() {
-
-// }
-
 function renderScore() {
   plAScores.innerText = plAScore
   plBScores.innerText = plBScore
 }
-
+//Ternary Operator
 function renderControls() {
   playAgnButton.style.visibility = winner ? "visable" : "hidden"
 }
-
+//if we get to 26 that = getWinner
 function handleDeal() {
   if (turnNum === 26) getWinner()
-  plACards.style.backgroundImage = CARDIMAGES[playerADeck[turnNum]]
-  plBCards.style.backgroundImage = CARDIMAGES[playerBDeck[turnNum]]
-  let playerACardVal = CARDVALUES[playerADeck[turnNum]]
-  let playerBCardVal = CARDVALUES[playerBDeck[turnNum]]
-  compareCards(playerACardVal, playerBCardVal)
+  // plACards.style.backgroundImage = CARDIMAGES[playerADeck[turnNum]]
+  // plBCards.style.backgroundImage = CARDIMAGES[playerBDeck[turnNum]]
+  let playerACardVal = DECK[playerADeck[turnNum]]
+  let cardd09Val = DECK[playerBDeck[turnNum]]
+  compareCards(cardc06, cardc06Val)
   render()
   }
-
-  function compareCards(playerACardVal,playerBCardVal) {
-    if (playerACardVal === playerBCardVal) {
+//if playerA is === to player B that its war, other wise if player A is less than player B then increase playerB by one, otherwise if 
+//player A is greater than player B than player A incease by 1
+  function compareCards(cardc06,cardd09Val) {
+    if (cardc06Val === cardd09Val) {
       messageEl.innerText = "IT'S WAR"
       turnNum++}
-    else if(playerACardVal < playerBCardVal) {
+    else if(cardc06Val < cardd09Val) {
       messageEl.innerText = ""
       plBScore++
       turnNum++}
-      else if(playerACardVal > playerBCardVal) {
+      else if(cardc06Val > cardd09Val) {
         messageEl.innerText = ""
         plAScore++
         turnNum++}
@@ -129,7 +112,8 @@ function handleDeal() {
   
 
 
-
+// if player A's score === player B's score there's no Winner, other wise if player A greater than player B than Player A win's
+// other wise if player A's score is less than player B's score than player B wins
 function getWinner() {
   if (plAScore === plBScore){
     messageEl.innerText = "NO WINNER-I'TS A TIE"
