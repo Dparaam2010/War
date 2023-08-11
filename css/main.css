@@ -38,14 +38,14 @@ main  {
 
 #pabox {
     border: 1vmin solid white;
-    border-radius: 2vmin;
+    border-radius: -2vmin;
     width: 100%;
     padding: 1vmin;
 }
 
 #pbbox {
     border: 1vmin solid white;
-    border-radius: 2vmin;
+    border-radius: -2vmin;
     width: 100%;
     padding: 1vmin;
 }

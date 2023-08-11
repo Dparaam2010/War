@@ -1,0 +1,30 @@
+Game Title : WAR!
+
+In my playing card game WAR!! there are two players (player A and player B),
+with two decks of 26 cards each deck with a total of 52 cards. The Cards rank from highest to lowest
+from A, K, J, 10, 9, 8, etc... There are no jokers in this game. The object of the game is to have more overall points than the other player . a winner will appear once all 26 cards have been played between both players. Press the Deal game button that will generate two cards for player A and player B. 
+If the cards happen to match, than that means WAR! you will press the deal game button and play the next hand. whoever has the higher card wins the point, otherwise if the new hand equals as well the war will contiune. As soon as they are diffrent the player of the higher card wins the point. The game contiunes until all 26 cards have been played.
+
+Link to War Game Photo:
+
+<img src="https://mail.google.com/mail/u/1?ui=2&ik=cb9ca288cd&attid=0.1&permmsgid=msg-a:r7372004494748052128&th=189e4a092b743cc6&view=fimg&fur=ip&sz=s0-l75-ft&attbid=ANGjdJ-FHVW30Ve0k58KS9iYUPy7butN577FajzjibTx9t0x-ntWbz1qskg_Qtp8E3xFQBUs5wAgJK4gwxEht0uZwtxqGxSw6BL7K_ngWkNX1XX8zvfs9dHLy7nU1gg&disp=emb&realattid=189e49fae02512234601" >
+
+
+Technologies used: JavaScript, HTML, CSS
+
+instructions: The Deal button will deal your cards
+            : The Play again button will start a whole new game
+
+LINK TO DEPLOY GAME:
+
+ <img src=" https://dparaam2010.github.io/War/" >
+
+
+IceBox items:
+1. Have the cards flip over every time you press the deal button
+2. Put desin on back of cards
+3. Have it so when you hit war 3 cards generate next to each deck and then the largest card wins and that player recives all points from all the cards.
+4. When it resets to go back to blank cards
+
+
+ 

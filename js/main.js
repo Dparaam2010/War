@@ -54,7 +54,6 @@ function init() {
   turnNum = 0;
   plAScore = 0;
   plBScore = 0;
-  // messageEl.innerText = "PLAYER A VS PLAYER B "
 }
   
   function render() {
@@ -83,8 +82,8 @@ function init() {
   compareCards(pACard.value, pBCard.value)
   render()
 }
-//DECK[0].face
-//if playerA is === to player B that its war, other wise if player A is less than player B then increase playerB by one, otherwise if 
+
+//if playerA is === to player B than it is war, other wise if player A is less than player B then increase playerB by one, otherwise if 
 //player A is greater than player B than player A incease by 1
 function compareCards(pACard,pBCard) {
   if (pACard === pBCard) {
