@@ -98,6 +98,7 @@ function compareCards(pACard,pBCard) {
         plAScore++
         turnNum++}
       }
+      
       function generateDeck() {
         SUITS.forEach(s=>{
           RANK.forEach(r=>{
