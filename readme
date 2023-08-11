@@ -1,9 +1,9 @@
 Game Title : WAR!
 
 In my playing card game WAR!! there are two players (player A and player B),
-with two decks of 26 cards each deck with a total of 52 cards. The Cards rank from highest to lowest
-from A, K, J, 10, 9, 8, etc... There are no jokers in this game. The object of the game is to have more overall points than the other player . a winner will appear once all 26 cards have been played between both players. Press the Deal game button that will generate two cards for player A and player B. 
-If the cards happen to match, than that means WAR! you will press the deal game button and play the next hand. whoever has the higher card wins the point, otherwise if the new hand equals as well the war will contiune. As soon as they are diffrent the player of the higher card wins the point. The game contiunes until all 26 cards have been played.
+with two decks of 26 cards each deck with a total of 52 cards. The Cards rank from lowest to highest
+from 2,3,4,5,6,--q,j,k etc... There are no jokers in this game. The object of the game is to have more overall points than the other player . a winner will appear once all 26 cards have been played between both players. Press the Deal game button that will generate two cards for player A and player B. 
+If the cards happen to match, than that means WAR! you will press the deal game button and play the next hand. whoever has the lowest card wins the point, otherwise if the new hand equals as well the war will contiune. As soon as they are diffrent the player of the higher card wins the point. The game contiunes until all 26 cards have been played.
 
 Link to War Game Photo:
 
