@@ -23,31 +23,31 @@ main  {
     
 }
 
-
 .flex-ctr {
     display: flex;
     align-items: center;
 }
 
-
-.cardc06,.cardd09 {
+.playeracard,.playerbcard {
     width: 15vmin;
     height: 20vmin;
-    background-color: white;
+    background-color: whitesmoke;
     background-position: center;
     background-size:cover;
 }
 
 #pabox {
-    display:flex;
-    flex-direction: column;
-    margin-left: -125vmin;
+    border: 1vmin solid white;
+    border-radius: 2vmin;
+    width: 100%;
+    padding: 1vmin;
 }
 
 #pbbox {
-    display:flex;
-    flex-direction: column;
-    margin-right: 34vmin;
+    border: 1vmin solid white;
+    border-radius: 2vmin;
+    width: 100%;
+    padding: 1vmin;
 }
 
 button {
@@ -62,46 +62,24 @@ button {
     
 }
 
-/* 
-.carda-flipped {
-    border: 2px solid black;
-    background-image: url(https://previews.123rf.com/images/ngad/ngad1510/ngad151000105/46949875-pink-of-playing-card.jpg);
-    background-size:97%;
-    background-repeat: no-repeat;
-    max-width: 200px;
-    margin: -1vmin;
-    margin-top: 8vmin;
-    margin-bottom: 6vmin;
-}
-
-.cardb-flipped {
-    border: 2px solid black;
-    background-image: url(https://previews.123rf.com/images/ngad/ngad1510/ngad151000105/46949875-pink-of-playing-card.jpg);
-    background-size:97%;
-    background-repeat: no-repeat;
-    max-width: 200px;
-    margin: -1vmin;
-    margin-top: 8vmin;
-    margin-bottom: 6vmin;
-} */
-
-
 button:hover {
     background-color: palevioletred;
     background: palevioletred;
     color: white;
-   
-
 }
 
 h1 {
     color: white;
     font-style: oblique;
-
+   
 }
 
 h2 {
-    color: white;
+    text-align: center;
+    color: palevioletred;
+    margin-top: 40vmin;
+    margin-right: 10vmin;
+    margin-top: initial;
 
 }
 

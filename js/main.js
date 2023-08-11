@@ -18,8 +18,8 @@ let winner, plAScore, plBScore, playerADeck, playerBDeck, turnNum, pACard, pBCar
 const DECK = []
 
 // /*----- cached elements  -----*/
-const cardc06 = document.querySelector(".cardc06");
-const cardd09 = document.querySelector(".cardd09");
+const playeracard = document.querySelector(".playeracard");
+const playerbcard = document.querySelector(".playerbcard");
 const plAScores = document.getElementById("pla-score");
 const plBScores = document.getElementById("plab-score");
 
@@ -54,7 +54,7 @@ function init() {
   turnNum = 0;
   plAScore = 0;
   plBScore = 0;
-  messageEl.innerText = "PLAYER A VS PLAYER B "
+  // messageEl.innerText = "PLAYER A VS PLAYER B "
 }
   
   function render() {
@@ -64,8 +64,8 @@ function init() {
 
   function renderBoard() {
   
-    cardc06.style.backgroundImage = `url(css/card-library/images/${pACard.suit}/${pACard.suit}-${pACard.rank}.svg)`
-    cardd09.style.backgroundImage = `url(css/card-library/images/${pBCard.suit}/${pBCard.suit}-${pBCard.rank}.svg)`
+    playeracard.style.backgroundImage = `url(css/card-library/images/${pACard.suit}/${pACard.suit}-${pACard.rank}.svg)`
+    playerbcard.style.backgroundImage = `url(css/card-library/images/${pBCard.suit}/${pBCard.suit}-${pBCard.rank}.svg)`
   }
   
   function renderScore() {
